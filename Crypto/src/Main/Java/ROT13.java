@@ -29,7 +29,8 @@ public class ROT13  {
         StringBuilder encrypted = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
             Integer index = getAlphabetIndex(text.charAt(i)) + delta;
-            Character in = (!isAlpha(text.charAt(i))) ?
+
+            Character in = (!isLetter(text.charAt(i))) ?
                     text.charAt(i) :
                     (index < upperCaseStart.length) ?
                             upperCaseStart[index] :
@@ -51,14 +52,6 @@ public class ROT13  {
         return index;
 
     }
-
-    public Boolean isAlpha(Character c) {
-        return String.valueOf(c).matches("[A-Za-z]");
-    }
-
-   /* public Boolean isUpper(Character a) {
-        return String.valueOf(a).matches("[A-Z]");
-    } */
 
     public Character matchCase(Character in, Character out) {
 
