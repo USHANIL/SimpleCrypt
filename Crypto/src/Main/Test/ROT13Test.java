@@ -13,6 +13,9 @@ public class ROT13Test {
 
         // When
         ROT13 cipher = new ROT13();
+        String actual1 = cipher.crypt(s1);
+        System.out.println(actual1);
+
         String actual = cipher.rotate(s1, 'A');
 
         // Then
